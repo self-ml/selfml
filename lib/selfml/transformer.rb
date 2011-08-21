@@ -4,6 +4,7 @@ require 'parslet'
 module SelfML
 
   class HashTransformer < Parslet::Transform
+    rule(:document => sequence(:d)) { Array(d) }
   	rule(:list => subtree(:l)) do
   		head = String(l[:head]).to_sym
   		tail = Array(l[:tail])
@@ -19,10 +20,12 @@ module SelfML
   class Transformer < Parslet::Transform
   	include AST
 
+    rule(:document => sequence(:doc)) { Document.new(doc) }
   	rule(:list => subtree(:l)) do
   		Node.new(
   			StringNode.new(l[:head]),
-  			Array(l[:tail]))
+  			Array(l[:tail])
+  		)
   	end
 
     # Comments

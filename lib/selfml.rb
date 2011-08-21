@@ -9,18 +9,14 @@ end
 
 module SelfML
   
-  def self.parse(s)
-    parser      = Parser.new
-    transformer = Transformer.new
+  def self.parse(s, engine=nil)
+    transformer = engine.new if engine.instance_of? Class
+
+    parser        = Parser.new
+    transformer ||= Transformer.new
     
     tree = parser.parse(s)
     out  = transformer.apply(tree)
-    
-    out
-  end
-  
-  def self.to_sml(s)
-    s.map(&:serialize).join("\n\n") + "\n"
   end
 
 end

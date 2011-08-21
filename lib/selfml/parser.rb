@@ -45,6 +45,6 @@ class SelfML::Parser < Parslet::Parser
   # Root
   rule(:node) { comment.as(:comment) | list.as(:list) | string.as(:string)  }
   
-  rule(:top) { (space? >> node >> space?).repeat }
+  rule(:top) { (space? >> node >> space?).repeat.as(:document) }
   root(:top)
 end
