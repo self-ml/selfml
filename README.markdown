@@ -1,12 +1,17 @@
-# Description
+# Self-ML
 
-# Install
+This is a ruby library for reading [self-ml](http://chocolatapp.com/blog/self-ml) files.  
+It is mostly finished, just needs a good polish.
+
+It will only parse correctly formed files, returning an error otherwise.
+
+## Install
 
 Comming really soon:
 
     gem install self-ml
 
-# Usage
+## Usage
 
 Read in a .selfml file and pretty print it
 
@@ -17,17 +22,27 @@ document = SelfML.parse( File.read "file.selfml" ) # SelfML.parse expects a stri
 puts document.to_s                                 # SelfML::AST::Document.to_s provides the document in pretty printing format.
 ```
 
-# Documentation
+## Documentation
 
 http://rubydoc.info/github/locks/self-ml/master/frames
 
-# How to Contribute
+## How to Contribute
 
+### code digger
 1. fork
 2. code
 3. pull request
 
-# Credits
+### API user
+1. test the library with your files
+2. submit an issue to the issue tracker
+
+## TO DO
+
+* clean up the API
+* gemify this bastard
+
+## Credits
 
 * devyn - helpful support
 * alexgordon - clearing up self-ml grammar
