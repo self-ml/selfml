@@ -44,5 +44,8 @@ http://rubydoc.info/github/locks/self-ml/master/frames
 
 ## Credits
 
+* locks - ruby implementation
 * devyn - helpful support
 * alexgordon - clearing up self-ml grammar
+
+[![endorse](http://api.coderwall.com/locks/endorsecount.png)](http://coderwall.com/locks)
