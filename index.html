@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Self-ml by locks</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Self-ml</h1>
+        <p>ruby + parslet + self-ml = juicy bits</p>
+        <p class="view"><a href="https://github.com/locks/self-ml">View the Project on GitHub <small>locks/self-ml</small></a></p>
+        <ul>
+          <li><a href="https://github.com/locks/self-ml/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/locks/self-ml/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/locks/self-ml">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Self-ML</h1>
+
+<p>This is a ruby library for reading <a href="http://chocolatapp.com/blog/self-ml">self-ml</a> files.<br>
+It is mostly finished, just needs a good polish.</p>
+
+<p>It will only parse correctly formed files, returning an error otherwise.</p>
+
+<h2>Install</h2>
+
+<p>Comming really soon:</p>
+
+<pre><code>gem install self-ml
+</code></pre>
+
+<h2>Usage</h2>
+
+<p>Read in a .selfml file and pretty print it</p>
+
+<div class="highlight">
+<pre><span class="nb">require</span> <span class="s1">'selfml'</span>
+
+<span class="n">document</span> <span class="o">=</span> <span class="no">SelfML</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span> <span class="s2">"file.selfml"</span> <span class="p">)</span> <span class="c1"># SelfML.parse expects a string and returns a SelfML::Document.</span>
+<span class="nb">puts</span> <span class="n">document</span><span class="o">.</span><span class="n">to_s</span>                                 <span class="c1"># SelfML::AST::Document.to_s provides the document in pretty printing format.</span>
+</pre>
+</div>
+
+
+<h2>Documentation</h2>
+
+<p><a href="http://rubydoc.info/github/locks/self-ml/master/frames">http://rubydoc.info/github/locks/self-ml/master/frames</a></p>
+
+<h2>How to Contribute</h2>
+
+<h3>code digger</h3>
+
+<ol>
+<li>fork</li>
+<li>code</li>
+<li>pull request</li>
+</ol><h3>API user</h3>
+
+<ol>
+<li>test the library with your files</li>
+<li>submit an issue to the issue tracker</li>
+</ol><h2>TO DO</h2>
+
+<ul>
+<li>clean up the API</li>
+<li>gemify this bastard</li>
+</ul><h2>Credits</h2>
+
+<ul>
+<li>locks - ruby implementation</li>
+<li>devyn - helpful support</li>
+<li>alexgordon - clearing up self-ml grammar</li>
+</ul><p><a href="http://coderwall.com/locks"><img src="http://api.coderwall.com/locks/endorsecount.png" alt="endorse"></a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/locks">locks</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-4489565-9");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
