@@ -1,13 +1,20 @@
-require 'rubygems'
 require 'parslet'
 
-class SelfML::Parser < Parslet::Parser
-  # Helpers
+class Parslet::Parser
   rule(:space)  { match('\s').repeat(1) }
   rule(:space?) { space.maybe }
-  
+
   rule(:word)   { match('\w').repeat }
-  rule(:word?)  { word.maybe }
+  rule(:word?)  { word.maybe }  
+end # monkey patching in a couple of helpers
+
+class SelfML::Parser < Parslet::Parser
+  root(:top)
+  rule(:top)  do
+    (space? >> node >> space?).repeat.as(:document)
+  end
+  
+  rule(:node) { comment.as(:comment) | list.as(:list) | string.as(:string)  }
   
   # String
   rule(:string)    { backtick.as(:backticks) | bracketed.as(:brackets) | verbatim.as(:verbatim) }
@@ -24,14 +31,16 @@ class SelfML::Parser < Parslet::Parser
   rule(:verbatim)  { str("#").absnt? >> match['^\[\](){}\s'].repeat(1) }
 
   # List
-  rule(:tail) { (node >> space?).repeat }
-  rule(:list) {
+  rule(:tail) do
+    (node >> space?).repeat
+  end
+  rule(:list) do
   	str('(') >> space? >> 
   	  comment.as(:comment).maybe >> space? >>
   	  string.as(:head)           >> space? >>
   	  tail.as(:tail)             >> space? >>
-    space? >> str(')')
-  }
+    space?   >> str(')')
+  end
   
   # Comment
   rule(:comment) { line.as(:line) | block.as(:block) }
@@ -42,9 +51,4 @@ class SelfML::Parser < Parslet::Parser
     ).repeat >> str('#}')
   end
 
-  # Root
-  rule(:node) { comment.as(:comment) | list.as(:list) | string.as(:string)  }
-  
-  rule(:top) { (space? >> node >> space?).repeat.as(:document) }
-  root(:top)
 end

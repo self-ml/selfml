@@ -4,8 +4,6 @@ module SelfML::AST
 
     def to_s
       a = self.map(&:serialize).reject {|n| n.nil? }
-      b = a.sort
-      
       a.join("\n\n") + "\n"
     end
 
@@ -36,14 +34,9 @@ module SelfML::AST
     alias :to_s :serialize
     
     def <=> rhs
-      case rhs
-      when Node
-        0
-      when StringNode
-        1
-      else
-        -1
-      end
+      case rhs when Node       then  0
+               when StringNode then  1
+                               else -1 end
     end
 
   end
@@ -60,14 +53,9 @@ module SelfML::AST
     alias :to_s :serialize
     
     def <=> rhs
-      case rhs
-      when StringNode
-        0
-      when Node
-        -1
-      else
-        1
-      end
+      case rhs when StringNode then  0
+               when Node       then -1
+                               else  1 end
     end
     
   end

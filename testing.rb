@@ -35,10 +35,10 @@ strings_in  , strings_out  = load_tests("strings")
 
 puts SelfML.parse(t).to_s
 puts "---"
-puts SelfML.parse(basic_in).to_s    == basic_out
-puts SelfML.parse(strings_in).to_s  == strings_out
-puts SelfML.parse(comments_in).to_s == comments_out
+a = SelfML.parse(basic_in   ).to_s    
+b = SelfML.parse(strings_in ).to_s 
+c = SelfML.parse(comments_in).to_s
 
-#puts Differ.diff_by_line( SelfML.parse(basic_in).to_s  , basic_out)
-#puts Differ.diff_by_line( SelfML.to_sml( SelfML.parse(string_in)   ), string_out)
-#puts Differ.diff_by_line( SelfML.to_sml( SelfML.parse(comments_in) ), comments_out)
+puts a
+puts "=="
+puts basic_out

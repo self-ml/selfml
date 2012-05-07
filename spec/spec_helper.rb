@@ -1,3 +1,5 @@
+require 'minitest/autorun'
+
 def load_fixture name
   {
     :input  => File.read("fixtures/#{name}.selfml"),

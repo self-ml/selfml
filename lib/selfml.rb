@@ -1,9 +1,4 @@
-require 'rubygems'
-require 'require_relative'
-
-module SelfML; end
-
-['parser','ast','transformer'].each do |file|
+['version', 'parser','ast','transformer'].each do |file|
   require_relative "selfml/#{file}"
 end
 

@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'parslet'
 
 module SelfML
@@ -23,8 +22,7 @@ module SelfML
     rule(:document => sequence(:doc)) { Document.new(doc) }
   	rule(:list => subtree(:l)) do
   		Node.new(
-  			StringNode.new(l[:head]),
-  			Array(l[:tail])
+  			StringNode.new(l[:head]) , Array(l[:tail])
   		)
   	end
 
