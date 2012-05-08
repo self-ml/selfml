@@ -40,8 +40,8 @@ module SelfML
     rule(:ticks     =>   simple(:s)) { "`" }
     
     rule(:brackets => sequence(:b)) { StringNode.new(b.reduce :+) }
-    rule(:nested   =>   simple(:n)) { StringNode.new(n)           }
-    rule(:nested   => sequence(:n)) { StringNode.new(n.reduce :+) }
+    rule(:nested   =>   simple(:n)) { StringNode.new(n) }
+    rule(:nested   => sequence(:n)) { "[" + StringNode.new(n.reduce :+) + "]" }
     
     rule(:text => simple(:t)) { StringNode.new(t) }
   end
