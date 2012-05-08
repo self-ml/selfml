@@ -25,7 +25,6 @@ puts document.to_s                                 # SelfML::AST::Document.to_s 
 ## Documentation
 
 http://rubydoc.info/github/locks/self-ml/master/frames
->>>>>>> a6ce4d603a05e3316a992dd58cb720175a9700d1
 
 ## How to Contribute
 
@@ -40,8 +39,7 @@ http://rubydoc.info/github/locks/self-ml/master/frames
 
 ## TO DO
 
-* clean up the API
-* gemify this bastard
+See issue tracker.
 
 ## Credits
 
