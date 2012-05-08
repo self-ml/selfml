@@ -1,5 +1,5 @@
 module SelfML::AST
-  
+
   class Document < Array
 
     def to_s
@@ -16,19 +16,22 @@ module SelfML::AST
       @head , @tail = head , tail
     end
     
-    def serialize level=1
+    def serialize( level = 1 )
       tail = @tail.sort.map do |t|
         case t
         when Node
-          "\n" + " "*level*4 + "#{t.serialize level+1}"
+          "\n" + " "*level*4 + (t.serialize level+1)
         when StringNode
-          " #{t.serialize}"
+          " "+t.serialize
         else
           nil
         end
       end
       
-      "(#{head.serialize}#{tail})"
+      # puts "head", head, @head.serialize
+      # puts "tail", tail
+      
+      "(" + head.serialize + tail.join("") + ")"
     end
     
     alias :to_s :serialize
@@ -38,7 +41,7 @@ module SelfML::AST
                when StringNode then  1
                                else -1 end
     end
-
+    
   end
   
   class StringNode < String
