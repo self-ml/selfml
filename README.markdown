@@ -1,4 +1,7 @@
 # Self-ML
+[![endorse](http://api.coderwall.com/locks/endorsecount.png)](http://coderwall.com/locks)
+[![Build Status](https://secure.travis-ci.org/locks/self-ml.png)](http://travis-ci.org/locks/self-ml)
+[![Gemnasium Build Status](https://gemnasium.com/locks/self-ml.png)](https://gemnasium.com/locks/self-ml)
 
 This is a ruby library for reading [self-ml](http://chocolatapp.com/blog/self-ml) files.  
 It is mostly finished, just needs a good polish.
@@ -46,6 +49,3 @@ See issue tracker.
 * locks - ruby implementation
 * devyn - helpful support
 * alexgordon - clearing up self-ml grammar
-
-[![endorse](http://api.coderwall.com/locks/endorsecount.png)](http://coderwall.com/locks)
-[![Build Status](https://secure.travis-ci.org/locks/self-ml.png)](http://travis-ci.org/locks/self-ml)
