@@ -1,4 +1,8 @@
-require_relative 'spec_helper'
+if RUBY_VERSION =~ /1\.8/
+  require './spec/spec_helper'
+else
+  require_relative 'spec_helper'
+end
 
 describe SelfML do
 

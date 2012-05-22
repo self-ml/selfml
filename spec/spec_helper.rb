@@ -1,5 +1,8 @@
-require 'bundler'
-Bundler.require(:test)
+require 'bundler/setup'
+Bundler.setup
+
+require 'require_relative'
+require 'minitest/autorun'
 
 require 'selfml'
 

@@ -3,7 +3,7 @@ source :rubygems
 # Specify your gem's dependencies in self-ml.gemspec
 gemspec
 
-gem "backports", :platforms => :ruby_18
+gem "require_relative", :platforms => :ruby_18
 
 group :test do
   gem "minitest", :require => "minitest/autorun"
