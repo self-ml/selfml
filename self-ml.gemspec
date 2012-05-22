@@ -23,5 +23,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency "minitest"
 
   s.add_runtime_dependency "parslet"
-  s.add_runtime_dependency "backports" if RUBY_VERSION < "1.9"
 end

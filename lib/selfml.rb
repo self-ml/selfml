@@ -1,3 +1,6 @@
+require 'bundler/setup'
+Bundler.require
+
 require_relative 'selfml/engines'
 require_relative 'selfml/parser'
 require_relative 'selfml/ast'
