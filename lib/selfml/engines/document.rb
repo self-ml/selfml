@@ -1,31 +1,17 @@
-require 'parslet'
+require_relative '../ast'
 
-module SelfML
+module SelfML::Engines
 
-  class HashTransformer < Parslet::Transform
-    rule(:document => sequence(:d)) { Array(d) }
-    rule(:list => subtree(:l)) do
-      head = String(l[:head]).to_sym
-      tail = Array(l[:tail])
-      
-      { head => tail }
-    end
-    
-    rule(:string   => simple(:s)) { String(s) }
-    rule(:verbatim => simple(:s)) { String(s) }
-  end
+  class Document < Parslet::Transform
+    include SelfML::AST
   
-  
-  class Transformer < Parslet::Transform
-    include AST
-  
-    rule(:document => sequence(:doc)) { Document.new(doc) }
+    rule(:document => sequence(:doc)) { SelfML::AST::Document.new(doc) }
     rule(:list => subtree(:l)) do
       Node.new(
         StringNode.new(l[:head]) , Array(l[:tail])
       )
     end
-
+  
     # Comments
     rule(:comment =>     simple(:s)) { Comment.new(s)             }
     rule(:block   =>   simple(:blk)) { Comment.new(blk)           }

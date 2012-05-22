@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'selfml'
+require 'json'
+
+input = ARGF.read
+STDOUT << SelfML.parse(input, SelfML::HashTransformer)
+STDOUT << "\n"
+STDOUT << SelfML.parse(input, SelfML::ArrayTransformer)
+
+# STDOUT << output.to_json

@@ -1,0 +1,123 @@
+self-ml(1) -- read self-ml files
+=============================================
+
+## SYNOPSIS
+
+`ronn` [<format>...] <file>...<br>
+`ronn` `-m`|`--man` <file>...<br>
+`ronn` `-S`|`--server` <file>...<br>
+`ronn` `--pipe` <file><br>
+`ronn` &lt; <file>
+
+`self-ml` filename
+
+## DESCRIPTION
+
+**Self-ML** parses files written in the self-ml format.
+
+Something something
+
+## FILES
+
+The `self-ml` command expects input to be valid self-ml(7) text.  Source files
+are typically named <name>.selfml (e.g., `example.1.ronn`).  The <name>
+and <section> should match the name and section defined in the <file>'s heading.
+
+When building roff or HTML output files, destination filenames are determined by
+taking the basename of the input <file> and adding the appropriate file
+extension (or removing the file extension in the case of roff output).  For
+example, executing `ronn example.1.ronn` generates `example.1` with roff output
+and `example.1.html` with HTML output.
+
+## OPTIONS
+
+These options control whether output is written to file(s), standard output, or
+directly to a man pager.
+
+  * `-o`=<output>:
+    Generate file <output>.
+
+  * `--pipe`:
+    Don't generate files, write generated output to standard output. This is the
+    default behavior when ronn source text is piped in on standard input and no
+    <file> arguments are provided.
+
+Format options control the files `ronn` generates, or the output format when the
+`--pipe` argument is specified. When no format options are given, both `--roff`
+and `--html` are assumed.
+
+  * `-r`, `--roff`:
+    Generate roff output. This is the default behavior when no <file>s are given
+    and ronn source text is read from standard input.
+
+  * `-5`, `--html`:
+    Generate output in HTML format.
+
+  * `-f`, `--fragment`:
+    Generate output in HTML format but only the document fragment, not the
+    header, title, or footer.
+
+Document attributes displayed in the header and footer areas of generated
+content are specified with these options. (These values may also be set via
+the [ENVIRONMENT][].)
+
+  * `--manual`=<manual>:
+    The name of the manual this man page belongs to; <manual> is prominently
+    displayed top-center in the header area.
+
+  * `--organization`=<name>:
+    The name of the group, organization, or individual responsible for
+    publishing the document; <name> is displayed in the bottom-left footer area.
+
+  * `--date`=<date>:
+    The document's published date; <date> must be formatted `YYYY-MM-DD` and is
+    displayed in the bottom-center footer area. The <file> mtime is used when no
+    <date> is given, or the current time when no <file> is available.
+
+Miscellaneous options:
+
+  * `-v`, `--version`:
+    Show ronn version and exit.
+
+  * `-h`, `--help`:
+    Show selfml help and exit.
+
+## EXAMPLES
+
+
+## ENVIRONMENT
+
+  * `RONN_MANUAL`:
+    A default manual name to be displayed in the top-center header area.
+    The `--manual` option takes precedence over this value.
+
+  * `RONN_ORGANIZATION`:
+    The default manual publishing group, organization, or individual to be
+    displayed in the bottom-left footer area. The `--organization` option takes
+    precedence over this value.
+
+  * `RONN_DATE`:
+    The default manual date in `YYYY-MM-DD` format. Displayed in the
+    bottom-center footer area. The `--date` option takes precedence over this
+    value.
+
+  * `RONN_STYLE`:
+    A `PATH`-style list of directories to check for stylesheets given to the
+    `--style` option. Directories are separated by a _:_; blank entries are
+    ignored. Use _._ to include the current working directory.
+
+  * `MANPAGER`:
+    The paging program used for man pages. This is typically set to
+    something like 'less -is'.
+
+
+## BUGS
+
+
+## COPYRIGHT
+
+Self-ML is Copyright (C) 2012 Ricardo Mendes <http://ricardomend.es>
+
+## SEE ALSO
+
+selfml(7)
