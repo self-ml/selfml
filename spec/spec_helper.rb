@@ -1,9 +1,3 @@
-require 'bundler/setup'
-Bundler.setup
-
-require 'require_relative'
-require 'minitest/autorun'
-
 require 'selfml'
 
 def load_fixture name

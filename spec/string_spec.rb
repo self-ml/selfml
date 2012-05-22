@@ -1,3 +1,6 @@
+require 'bundler'
+Bundler.require(:default, :test)
+
 require_relative 'spec_helper'
 
 describe SelfML do

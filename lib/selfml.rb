@@ -1,5 +1,5 @@
-require 'bundler/setup'
-Bundler.require
+require 'bundler'
+Bundler.require(:default)
 
 require_relative 'selfml/engines'
 require_relative 'selfml/parser'

@@ -1,8 +1,7 @@
-if RUBY_VERSION =~ /1\.8/
-  require './spec/spec_helper'
-else
-  require_relative 'spec_helper'
-end
+require 'bundler'
+Bundler.require(:default, :test)
+
+require_relative 'spec_helper'
 
 describe SelfML do
 
