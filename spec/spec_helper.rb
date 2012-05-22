@@ -1,7 +1,5 @@
 require 'bundler'
-Bundler.setup
-
-require 'minitest/autorun'
+Bundler.require(:test)
 
 require 'selfml'
 

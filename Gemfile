@@ -1,9 +1,11 @@
-source "http://rubygems.org"
+source :rubygems
 
 # Specify your gem's dependencies in self-ml.gemspec
 gemspec
 
+
 group :test do
+  gem "minitest", :require => "minitest/autorun"
   gem "rake"
   gem "pry"
 end
