@@ -4,8 +4,8 @@ require 'selfml'
 require 'json'
 
 input = ARGF.read
-$stdout << SelfML.parse(input, SelfML::Engines::HashTransformer)
+$stdout << SelfML.parse(input, SelfML::Engines::Hash)
 $stdout << "\n"
-$stdout << SelfML.parse(input, SelfML::Engines::ArrayTransformer)
+$stdout << SelfML.parse(input, SelfML::Engines::Array)
 
 # $stdout << output.to_json
