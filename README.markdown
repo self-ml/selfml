@@ -10,9 +10,9 @@ It will only parse correctly formed files, returning an error otherwise.
 
 ## Install
 
-Comming really soon:
-
+```ruby
     gem install self-ml
+```
 
 ## Usage
 
