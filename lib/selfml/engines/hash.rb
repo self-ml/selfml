@@ -11,10 +11,10 @@ module SelfML::Engines
     
     rule(:string   => simple(:s)) { String(s) }
     rule(:verbatim => simple(:s)) { String(s) }
-  end
-  
-  class JSON < Hash
-    rule(:document => sequence(:d)) { require 'json'; Array(d).to_json }
+    
+    rule(:brackets => sequence(:b)) { "[#{b.reduce(:+)}]" }
+    
+    rule(:text => simple(:t)) { String(t) }
   end
   
 end
