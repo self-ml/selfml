@@ -1,0 +1,121 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "SELF\-ML" "1" "May 2012" "" ""
+.
+.SH "NAME"
+\fBself\-ml\fR \- read self\-ml files
+.
+.SH "SYNOPSIS"
+\fBronn\fR [\fIformat\fR\.\.\.] \fIfile\fR\.\.\.
+.
+.br
+\fBronn\fR \fB\-m\fR|\fB\-\-man\fR \fIfile\fR\.\.\.
+.
+.br
+\fBronn\fR \fB\-S\fR|\fB\-\-server\fR \fIfile\fR\.\.\.
+.
+.br
+\fBronn\fR \fB\-\-pipe\fR \fIfile\fR
+.
+.br
+\fBronn\fR < \fIfile\fR
+.
+.P
+\fBself\-ml\fR filename
+.
+.SH "DESCRIPTION"
+\fBSelf\-ML\fR parses files written in the self\-ml format\.
+.
+.P
+Something something
+.
+.SH "FILES"
+The \fBself\-ml\fR command expects input to be valid self\-ml(7) text\. Source files are typically named \fIname\fR\.selfml (e\.g\., \fBexample\.1\.ronn\fR)\. The \fIname\fR and \fIsection\fR should match the name and section defined in the \fIfile\fR\'s heading\.
+.
+.P
+When building roff or HTML output files, destination filenames are determined by taking the basename of the input \fIfile\fR and adding the appropriate file extension (or removing the file extension in the case of roff output)\. For example, executing \fBronn example\.1\.ronn\fR generates \fBexample\.1\fR with roff output and \fBexample\.1\.html\fR with HTML output\.
+.
+.SH "OPTIONS"
+These options control whether output is written to file(s), standard output, or directly to a man pager\.
+.
+.TP
+\fB\-o\fR=\fIoutput\fR
+Generate file \fIoutput\fR\.
+.
+.TP
+\fB\-\-pipe\fR
+Don\'t generate files, write generated output to standard output\. This is the default behavior when ronn source text is piped in on standard input and no \fIfile\fR arguments are provided\.
+.
+.P
+Format options control the files \fBronn\fR generates, or the output format when the \fB\-\-pipe\fR argument is specified\. When no format options are given, both \fB\-\-roff\fR and \fB\-\-html\fR are assumed\.
+.
+.TP
+\fB\-r\fR, \fB\-\-roff\fR
+Generate roff output\. This is the default behavior when no \fIfile\fRs are given and ronn source text is read from standard input\.
+.
+.TP
+\fB\-5\fR, \fB\-\-html\fR
+Generate output in HTML format\.
+.
+.TP
+\fB\-f\fR, \fB\-\-fragment\fR
+Generate output in HTML format but only the document fragment, not the header, title, or footer\.
+.
+.P
+Document attributes displayed in the header and footer areas of generated content are specified with these options\. (These values may also be set via the \fIENVIRONMENT\fR\.)
+.
+.TP
+\fB\-\-manual\fR=\fImanual\fR
+The name of the manual this man page belongs to; \fImanual\fR is prominently displayed top\-center in the header area\.
+.
+.TP
+\fB\-\-organization\fR=\fIname\fR
+The name of the group, organization, or individual responsible for publishing the document; \fIname\fR is displayed in the bottom\-left footer area\.
+.
+.TP
+\fB\-\-date\fR=\fIdate\fR
+The document\'s published date; \fIdate\fR must be formatted \fBYYYY\-MM\-DD\fR and is displayed in the bottom\-center footer area\. The \fIfile\fR mtime is used when no \fIdate\fR is given, or the current time when no \fIfile\fR is available\.
+.
+.P
+Miscellaneous options:
+.
+.TP
+\fB\-v\fR, \fB\-\-version\fR
+Show ronn version and exit\.
+.
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Show selfml help and exit\.
+.
+.SH "EXAMPLES"
+.
+.SH "ENVIRONMENT"
+.
+.TP
+\fBRONN_MANUAL\fR
+A default manual name to be displayed in the top\-center header area\. The \fB\-\-manual\fR option takes precedence over this value\.
+.
+.TP
+\fBRONN_ORGANIZATION\fR
+The default manual publishing group, organization, or individual to be displayed in the bottom\-left footer area\. The \fB\-\-organization\fR option takes precedence over this value\.
+.
+.TP
+\fBRONN_DATE\fR
+The default manual date in \fBYYYY\-MM\-DD\fR format\. Displayed in the bottom\-center footer area\. The \fB\-\-date\fR option takes precedence over this value\.
+.
+.TP
+\fBRONN_STYLE\fR
+A \fBPATH\fR\-style list of directories to check for stylesheets given to the \fB\-\-style\fR option\. Directories are separated by a \fI:\fR; blank entries are ignored\. Use \fI\.\fR to include the current working directory\.
+.
+.TP
+\fBMANPAGER\fR
+The paging program used for man pages\. This is typically set to something like \'less \-is\'\.
+.
+.SH "BUGS"
+.
+.SH "COPYRIGHT"
+Self\-ML is Copyright (C) 2012 Ricardo Mendes \fIhttp://ricardomend\.es\fR
+.
+.SH "SEE ALSO"
+selfml(7)
