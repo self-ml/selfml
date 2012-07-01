@@ -19,10 +19,12 @@ Gem::Specification.new do |s|
   s.executables << 'selfml'
   s.require_paths = ["lib"]
 
-  s.add_development_dependency "parslet"
   s.add_development_dependency "minitest"
+  s.add_development_dependency "pry"
   s.add_development_dependency "ronn"
+  s.add_development_dependency "parslet"
 
-  s.add_runtime_dependency "parslet"
-  s.add_runtime_dependency "gem-man"
+  s.add_dependency "parslet"
+  s.add_dependency "gem-man"
+  s.add_dependency "require_relative" unless RUBY_VERSION > '1.8'
 end

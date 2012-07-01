@@ -1,3 +1,5 @@
+require 'parslet'
+
 module SelfML::Engines
   
   class Hash < Parslet::Transform

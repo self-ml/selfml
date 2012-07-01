@@ -1,11 +1,26 @@
 #!/usr/bin/env ruby
 
+require 'optparse'
+
 require 'selfml'
 require 'json'
 
-input = ARGF.read
-$stdout << SelfML.parse(input, SelfML::Engines::Hash)
-$stdout << "\n"
-$stdout << SelfML.parse(input, SelfML::Engines::Array)
+engine = nil
 
-# $stdout << output.to_json
+options = {}
+opts = OptionParser.new do |opts|
+  executable_name = File.split($0)[1]
+  opts.banner = <<-EOS
+Banner banner
+
+Usage: #{executable_name} [options] args...
+  EOS
+
+  opts.on("--json", "Generate JSON") do
+    engine = SelfML::Engines::JSON
+  end
+end
+opts.parse!
+
+input = ARGF.read
+$stdout << SelfML.parse(input, engine)
