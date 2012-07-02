@@ -1,4 +1,4 @@
-require_relative '../ast'
+require 'selfml/ast'
 
 module SelfML::Engines
 

@@ -26,5 +26,4 @@ Gem::Specification.new do |s|
 
   s.add_dependency "parslet"
   s.add_dependency "gem-man"
-  s.add_dependency "require_relative" unless RUBY_VERSION > '1.8'
 end

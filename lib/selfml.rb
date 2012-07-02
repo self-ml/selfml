@@ -2,9 +2,9 @@ require 'bundler/setup'
 
 module SelfML; end
 
-require_relative 'selfml/engines'
-require_relative 'selfml/parser'
-require_relative 'selfml/ast'
+require 'selfml/engines'
+require 'selfml/parser'
+require 'selfml/ast'
 
 module SelfML
 
