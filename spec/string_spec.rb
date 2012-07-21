@@ -7,6 +7,15 @@ describe SelfML do
 
   describe "Strings" do
     
+    it "is a verbatim string" do
+    end
+    
+    it "is a bracketed string" do
+    end
+    
+    it "is a backtick string" do
+    end
+    
     it "parses example correctly" do
       subject.parse(fixtures[:input]).to_s.must_equal fixtures[:output]
     end

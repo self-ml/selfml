@@ -1,12 +1,17 @@
 module SelfML::AST
   
+  # SelfML::AST::Node
+  #
   class Node
     attr_accessor :head , :tail
     
+    # @param [String] head the head of the node.
+    # @param [Array] tail the tail of the node. optional.
     def initialize( head , tail = [] )
       @head , @tail = head , tail
     end
     
+    # @param [Integer] level used in recursion
     def serialize( level = 1 )
       tail = @tail.sort.map do |t|
         case t
@@ -24,9 +29,9 @@ module SelfML::AST
       
       "(" + head.serialize + tail.join("") + ")"
     end
-    
     alias :to_s :serialize
     
+    # @param [SelfML::AST::Node] rhs the right-hand side comparison
     def <=> rhs
       case rhs when Node       then  0
                when StringNode then  1

@@ -1,6 +1,8 @@
 require 'parslet'
 
 module SelfML
+  
+  # Helper methods
   class Parslet::Parser
     
     rule(:space)  { match('\s').repeat(1) }
@@ -10,6 +12,8 @@ module SelfML
     rule(:word?)  { word.maybe }  
   end # monkey patching in a couple of helpers
   
+  # Class responsible for parsing all the things.
+  #
   class Parser < Parslet::Parser
     root(:top)
     rule(:top)  do

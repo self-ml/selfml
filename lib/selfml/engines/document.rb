@@ -2,6 +2,10 @@ require 'selfml/ast'
 
 module SelfML::Engines
 
+  # SelfML::Engines::Document
+  #
+  # The main one.
+  # The real deal.
   class Document < Parslet::Transform
     include SelfML::AST
   

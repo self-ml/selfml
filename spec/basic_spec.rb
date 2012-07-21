@@ -1,16 +1,17 @@
 require_relative 'spec_helper'
 
-describe SelfML do
+describe SelfML::Parser do
 
   subject { SelfML }
-  let(:fixtures) { load_fixture "basic" }
+  
+  let(:basic)    { load_fixture "basic"    }
+  let(:comments) { load_fixture "comments" }
+  let(:strings)  { load_fixture "strings"  }
 
-  describe "Basic" do
-
-    it "parses example correctly" do
-      subject.parse(fixtures[:input]).to_s.must_equal fixtures[:output]
-    end
-
+  it "parses example correctly" do
+    subject.parse(basic[:input]   ).to_s.must_equal basic[:output]
+    subject.parse(comments[:input]).to_s.must_equal comments[:output]
+    subject.parse(strings[:input] ).to_s.must_equal strings[:output]
   end
 
 end

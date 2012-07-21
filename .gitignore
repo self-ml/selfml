@@ -4,6 +4,10 @@ Gemfile.lock
 pkg/*
 .rvmrc
 
+# YARD
+.yardoc
+doc
+
 # rubinius
 .rbc
 .rbx

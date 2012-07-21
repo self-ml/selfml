@@ -1,5 +1,6 @@
 module SelfML::Engines
 
+  # Returns a SelfML document in array representation.
   class Array < Parslet::Transform
     rule(:verbatim => simple(:s)) { String(s).to_sym }
     rule(:string   => simple(:s)) { s.to_sym }

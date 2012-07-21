@@ -2,6 +2,7 @@ require 'parslet'
 
 module SelfML::Engines
   
+  # Returns a SelfML document in hash representation.
   class Hash < Parslet::Transform
     rule(:document => sequence(:d)) { Array(d) }
     rule(:list => subtree(:l)) do
