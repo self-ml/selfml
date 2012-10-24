@@ -47,5 +47,7 @@ See issue tracker.
 ## Credits
 
 * locks - ruby implementation
+* alexgordon - creating self-ml and clearing up the grammer
 * devyn - helpful support
-* alexgordon - clearing up self-ml grammar
+* atamis - alternative ruby implementation, inspiration
+* kschiess - creating parslet and schooling me on how to use it

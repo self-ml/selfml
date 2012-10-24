@@ -11,13 +11,13 @@ Gem::Specification.new do |s|
   s.summary     = %q{self-ml parser}
   s.description = %q{Self-ML is, as the name implies, a self-ml parser. It also has some utilities to aid in building self-ml files.}
 
-  s.rubyforge_project = "self-ml"
-
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- spec/*`.split("\n")
   # s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.executables << 'selfml'
   s.require_paths = ["lib"]
+
+  s.required_ruby_version = "~> 1.9.3"
 
   s.add_development_dependency "minitest"
   s.add_development_dependency "rake"

@@ -20,7 +20,7 @@ module SelfML
       (space? >> node >> space?).repeat.as(:document)
     end
     
-    rule(:node) { comment.as(:comment) | list.as(:list) | string.as(:string)  }
+    rule(:node) { comment.as(:comment) | list.as(:list) | string.as(:string) }
     
     # String
     rule(:string)    { backtick.as(:backticks) | bracketed.as(:brackets) | verbatim.as(:verbatim) }
@@ -52,7 +52,7 @@ module SelfML
     
     # Comment
     rule(:comment) { line.as(:line) | block.as(:block) }
-    rule(:line)    { str('#') >> match['^\\n'].repeat.as(:text) >> (str("\n") | any.absnt?) }
+    rule(:line)    { str('#') >> match['^\\n'].repeat.as(:text) >> (str("\n") | any.absent?) }
     rule(:block) do
       str('{#') >> (
         block.as(:block) |  match['^#}'].as(:text)
