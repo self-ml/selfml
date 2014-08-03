@@ -3,7 +3,7 @@ require_relative 'spec_helper'
 describe SelfML::Parser do
 
   subject { SelfML }
-  
+
   let(:basic)    { load_fixture "basic"    }
   let(:comments) { load_fixture "comments" }
   let(:strings)  { load_fixture "strings"  }
