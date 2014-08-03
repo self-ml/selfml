@@ -9,9 +9,9 @@ describe SelfML::Parser do
   let(:strings)  { load_fixture "strings"  }
 
   it "parses example correctly" do
-    subject.parse(basic[:input]   ).to_s.must_equal basic[:output]
-    subject.parse(comments[:input]).to_s.must_equal comments[:output]
-    subject.parse(strings[:input] ).to_s.must_equal strings[:output]
+    assert_equal subject.parse(basic[:input]).to_s, basic[:output]
+    assert_equal subject.parse(comments[:input]).to_s, comments[:output]
+    assert_equal subject.parse(strings[:input]).to_s, strings[:output]
   end
 
 end

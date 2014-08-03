@@ -17,7 +17,7 @@ describe SelfML do
     end
 
     it "parses example correctly" do
-      subject.parse(fixtures[:input]).to_s.must_equal fixtures[:output]
+      assert_equal subject.parse(fixtures[:input]).to_s, fixtures[:output]
     end
 
   end

@@ -17,7 +17,8 @@ describe SelfML do
 
       it "outputs correctly" do
         output = {:document=>[{:grandparent=>[{:parent=>["child1", "child2"]}]}]}
-        subject.apply(document).must_equal output
+
+        assert_equal subject.apply(document), output
       end
     end
 
