@@ -19,12 +19,12 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = "~> 1.9.3"
 
-  s.add_development_dependency "minitest"
-  s.add_development_dependency "rake"
-  s.add_development_dependency "pry"
-  s.add_development_dependency "ronn"
+  s.add_development_dependency "minitest", "~> 5.0"
+  s.add_development_dependency "rake", "~> 10.0"
+  s.add_development_dependency "pry", "~> 0.10"
+  s.add_development_dependency "ronn", "~> 0.7"
 
-  s.add_runtime_dependency "parslet", "~> 1.6.1"
+  s.add_runtime_dependency "parslet", "~> 1.5"
 
-  s.add_dependency "gem-man"
+  s.add_dependency "gem-man", "~> 0.3"
 end

@@ -4,6 +4,6 @@ source "https://rubygems.org"
 gemspec
 
 group :travis do
-  gem "rake"
-  gem "minitest"
+  gem "minitest", "~> 5.0"
+  gem "rake", "~> 10.0"
 end
