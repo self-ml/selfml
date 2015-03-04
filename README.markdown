@@ -1,5 +1,9 @@
 # Self-ML
+
+[![Gem Version](https://badge.fury.io/rb/selfml.svg)](http://badge.fury.io/rb/selfml)
 [![Build Status](https://secure.travis-ci.org/locks/self-ml.png)](http://travis-ci.org/locks/self-ml)
+[![Code Climate](https://codeclimate.com/github/self-ml/selfml/badges/gpa.svg)](https://codeclimate.com/github/self-ml/selfml)
+[![Inline docs](http://inch-ci.org/github/self-ml/selfml.svg?branch=master)](http://inch-ci.org/github/self-ml/selfml)
 [![Gemnasium Build Status](https://gemnasium.com/self-ml/selfml.png)](https://gemnasium.com/self-ml/selfml)
 
 This is a ruby library for reading [self-ml](http://chocolatapp.com/blog/self-ml) files.
